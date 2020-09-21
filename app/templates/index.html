@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container-fluid">
+<div class="col-6">
+    <br>
+    <h5>Отправка письма</h5>
+    <p>Получатель - daniltarasov@yandex.ru</p>
+    <form method="post">  
+    {% csrf_token %}
+    <table>
+      {{ form|crispy }}
+    </table> 
+    <br>
+    <input type="submit" value="Отправить">  
+    </form>
+</div>
+</div>  
+{% endblock %}
+
+{% block title %}
+	<title>Отправка письма</title>  
+{% endblock %}
